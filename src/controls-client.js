@@ -35,11 +35,11 @@ body[data-ds-dark-theme] :is(.mm-effort-card,.mm-menu,.mm-hover-card,.mm-slider-
 .mm-effort-grip{height:9px;cursor:grab;user-select:none;margin-bottom:3px;text-align:center;color:var(--dsw-alias-label-tertiary,#9ca4af);font-size:10px;line-height:9px}
 .mm-selector{font:inherit;position:relative}.mm-trigger{border:0;background:transparent;border-radius:8px;padding:4px 8px;color:var(--dsw-alias-label-secondary,#89929e);font:inherit;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:6px;max-width:240px;min-height:28px}.mm-trigger>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mm-trigger:hover{background:var(--dsw-alias-interactive-bg-hover,#edf0f4)}
 .mm-menu{padding:6px;max-height:min(460px,70vh);overflow:auto;min-width:120px;border-radius:12px;animation:mm-pop-in .2s cubic-bezier(.2,0,0,1)}.mm-provider{padding:0;border-radius:0;margin:0;position:relative;transition:border-radius .26s cubic-bezier(.2,0,0,1),margin .26s cubic-bezier(.2,0,0,1),padding .26s cubic-bezier(.2,0,0,1),background-color .26s cubic-bezier(.2,0,0,1)}.mm-provider.expanded{padding:4px;margin:8px 0;border-radius:9px;background:var(--dsw-alias-interactive-bg-hover,#f0f1f3)}
-.mm-provider-row{display:flex;align-items:center;position:relative}.mm-provider-name,.mm-model-row{flex:1;min-width:0;display:block;background:transparent;border:0;cursor:pointer;color:inherit;font:inherit;font-size:12px;text-align:left;height:32px;padding:0 9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-radius:7px}.mm-provider-name{flex:0 0 62%;width:62%;border-radius:0}.mm-provider-arrow{border:0;background:transparent;color:var(--dsw-alias-label-secondary,#85909d);width:26px;height:30px;cursor:pointer}.mm-provider-expand{flex:1;min-width:32px;height:32px;width:auto;display:flex;align-items:center;justify-content:flex-end;padding:0 9px}.mm-provider-expand>span{opacity:0;transition:opacity .15s ease}.mm-provider-row:hover .mm-provider-expand>span,.mm-provider-expand:focus-visible>span,.expanded .mm-provider-expand>span{opacity:1}
+.mm-provider-row{display:flex;align-items:center;position:relative;border-radius:7px}.mm-provider-name,.mm-model-row{flex:1;min-width:0;display:block;background:transparent;border:0;cursor:pointer;color:inherit;font:inherit;font-size:12px;text-align:left;height:32px;padding:0 9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-radius:7px}.mm-provider-name{flex:0 0 62%;width:62%;border-radius:0}.mm-provider-arrow{border:0;background:transparent;color:var(--dsw-alias-label-secondary,#85909d);width:26px;height:30px;cursor:pointer}.mm-provider-expand{flex:1;min-width:32px;height:32px;width:auto;display:flex;align-items:center;justify-content:flex-end;padding:0 9px}.mm-provider-expand>span{opacity:0;transition:opacity .15s ease}.mm-provider-row:hover .mm-provider-expand>span,.mm-provider-expand:focus-visible>span,.expanded .mm-provider-expand>span{opacity:1}
 .mm-provider-models{display:grid;grid-template-rows:0fr;transition:grid-template-rows .26s cubic-bezier(.2,0,0,1);pointer-events:none}.mm-provider.expanded .mm-provider-models{grid-template-rows:1fr;pointer-events:auto}.mm-provider-models-clip{min-height:0;overflow:hidden}.mm-provider-models .mm-model-row{width:100%}
 .mm-model-row:hover{background:var(--dsw-alias-interactive-bg-active,#e4e7eb)}.mm-model-row.selected{color:var(--dsw-alias-state-business-primary)}
 .mm-menu-message{font-size:12px;padding:8px;color:var(--dsw-alias-label-secondary,#808894)}.mm-menu-error{font-size:12px;padding:8px;color:var(--dsw-alias-state-error-primary)}
-.mm-hover-card{padding:5px 10px;display:flex;gap:12px;align-items:center;min-height:34px;max-width:calc(100vw - 16px);white-space:nowrap;border-radius:10px;animation:mm-pop-in .2s cubic-bezier(.2,0,0,1)}
+.mm-hover-card{padding:5px 10px;display:flex;gap:12px;align-items:center;min-height:34px;max-width:calc(100vw - 16px);white-space:nowrap;border-radius:12px;animation:mm-pop-in .2s cubic-bezier(.2,0,0,1)}
 .mm-hover-card.closing,.mm-slider-tip-card.closing,.mm-type-menu.closing{pointer-events:none;opacity:0;transform:scaleY(.96);transform-origin:top;transition:opacity .2s ease,transform .2s cubic-bezier(.2,0,0,1)}
 @keyframes mm-pop-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 .mm-hover-name{border:0;padding:2px 0;background:transparent;font:inherit;font-size:12px;cursor:pointer;color:inherit;white-space:normal;overflow-wrap:anywhere;min-width:var(--mm-hover-name-width,80px);text-align:left}.mm-hover-card.supplier .mm-hover-name{min-width:0;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -303,6 +303,8 @@ function HostedModelSelect({ctx,sessionId,locked,available,directory,select,refr
   const {content:shownHover,closing:hoverClosing}=useClosingCard(hover);
   const root=react.useRef(null), menu=react.useRef(null), floating=react.useRef(null), leaveTimer=react.useRef(0), staged=react.useMemo(()=>new Map(),[sessionId]), hoverSource=react.useRef(null), activeSession=react.useRef(sessionId), suppressFocus=react.useRef(false);
   activeSession.current=sessionId;
+  // 供应商行的悬浮高亮走设置卡同一台旅行悬浮框机器（行为唯一）。
+  const travel=useTravelFrames(menu);
   react.useEffect(()=>{setOpen(false);setHover(null);setExpanded(new Set());setError(null);},[sessionId]);
   // A committed selection, including /model, takes precedence over an older preview.
   react.useEffect(()=>{
@@ -363,10 +365,11 @@ function HostedModelSelect({ctx,sessionId,locked,available,directory,select,refr
       if(disabled)return;
       remember(shownHover.model,effort);if(state.current?.provider===shownHover.model.provider&&state.current.model===shownHover.model.id){void select(selectionFor(shownHover.model,state.current,staged)).then(result=>{if(result?.ok===false){staged.delete(routeKey(shownHover.model.provider,shownHover.model.id));setStagingRevision(x=>x+1);setError(result.error?.message||'选择失败');}});}
     }}),mc('button',{type:'button',className:'mm-hover-name',disabled,...selectPress(()=>choose(shownHover.model))},shownHover.model.name||shownHover.model.id));
-  const supplierPopup=shownHover?.kind==='provider'&&hoverGeometry&&mc('div',{key:popupKey,ref:floating,className:'mm-hover-card supplier'+(hoverClosing?' closing':''),style:hoverGeometry,'aria-hidden':hoverClosing,inert:hoverClosing?'':undefined,onPointerEnter:keep,onPointerLeave:leave},
+  const supplierPopup=shownHover?.kind==='provider'&&hoverGeometry&&mc('div',{key:popupKey,ref:floating,className:'mm-hover-card supplier'+(hoverClosing?' closing':''),style:hoverGeometry,'aria-hidden':hoverClosing,inert:hoverClosing?'':undefined,onPointerEnter:keep,onPointerLeave:()=>{leave();travel.onMouseLeave();}},
     mc('button',{type:'button',className:'mm-hover-name',disabled,...selectPress(()=>choose(shownHover.model))},(shownHover.group.name||shownHover.group.id)));
   const groups=state.groups.filter(group=>group.models.length);
-  const menuNode=open&&geometry&&mc('div',{ref:menu,className:'mm-menu',style:geometry,'aria-label':'选择模型'},
+  const menuNode=open&&geometry&&mc('div',{ref:menu,className:'mm-menu',style:geometry,'aria-label':'选择模型',onMouseOverCapture:travel.onMouseOverCapture,onMouseDownCapture:travel.onMouseDownCapture,onMouseLeave:()=>{if(shownHover?.kind==='provider')return;travel.onMouseLeave();}},
+    ...travel.overlays,
     state.status==='loading'&&mc('div',{className:'mm-menu-message'},'正在加载模型…'),
     ...groups.map(group=>{
       const models=group.models.map(m=>({...m,provider:group.id}));
@@ -374,9 +377,9 @@ function HostedModelSelect({ctx,sessionId,locked,available,directory,select,refr
       const defaultModel=models.find(m=>m.id===preferred)||models[0]; if(!defaultModel)return null;
       const isExpanded=expanded.has(group.id);
       return mc('div',{className:'mm-provider'+(isExpanded?' expanded':''),key:group.id},
-        mc('div',{className:'mm-provider-row'},
+        mc('div',{className:'mm-provider-row','data-travel-spot':true},
           mc('button',{type:'button',className:'mm-provider-name',disabled,onPointerEnter:e=>show({kind:'provider',group,model:defaultModel},e.currentTarget),onPointerLeave:leave,onFocus:e=>{if(e.currentTarget.matches(':focus-visible'))show({kind:'provider',group,model:defaultModel},e.currentTarget);},...selectPress(()=>choose(defaultModel))},(group.name||group.id)||group.id),
-          mc('button',{type:'button',className:'mm-provider-arrow mm-provider-expand','aria-label':`${isExpanded?'收起':'展开'} ${(group.name||group.id)||group.id}`,'aria-expanded':isExpanded,onPointerEnter:()=>{keep();setHover(null);},onFocus:()=>{keep();setHover(null);},onClick:()=>expand(group.id)},mc('span',null,isExpanded?'⌃':'›'))),
+          mc('button',{type:'button',className:'mm-provider-arrow mm-provider-expand','aria-label':`${isExpanded?'收起':'展开'} ${(group.name||group.id)||group.id}`,'aria-expanded':isExpanded,onPointerEnter:()=>{keep();setHover(null);},onFocus:()=>{keep();setHover(null);},onClick:()=>expand(group.id)},mc('span',null,isExpanded?'⌃':'⌄'))),
         mc('div',{className:'mm-provider-models','aria-hidden':!isExpanded,inert:!isExpanded?'':undefined},mc('div',{className:'mm-provider-models-clip'},
           models.map(model=>mc('button',{key:model.id,type:'button',className:'mm-model-row'+(state.current?.provider===group.id&&state.current.model===model.id?' selected':''),disabled:disabled||!isExpanded,tabIndex:isExpanded?undefined:-1,onPointerEnter:e=>{if(controlsFor(model))show({kind:'model',model},e.currentTarget);else setHover(null);},onPointerLeave:leave,onFocus:e=>{if(controlsFor(model))show({kind:'model',model},e.currentTarget);},...selectPress(()=>choose(model))},model.name||model.id)))));
     }),

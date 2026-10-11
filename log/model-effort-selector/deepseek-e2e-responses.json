@@ -1,0 +1,32 @@
+{
+  "apiFormat": "responses",
+  "provider": "deepseek-lab",
+  "model": "deepseek-flash",
+  "configuredAndSelected": [
+    "off",
+    "omit",
+    "high",
+    "max"
+  ],
+  "outboundRequests": 0,
+  "auditRecordsBefore": 16,
+  "auditRecordsAfter": 16,
+  "results": [
+    {
+      "selection": "off",
+      "code": "UNSUPPORTED_FORMAT"
+    },
+    {
+      "selection": "omit",
+      "code": "UNSUPPORTED_FORMAT"
+    },
+    {
+      "selection": "high",
+      "code": "UNSUPPORTED_FORMAT"
+    },
+    {
+      "selection": "max",
+      "code": "UNSUPPORTED_FORMAT"
+    }
+  ]
+}

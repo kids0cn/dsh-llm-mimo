@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-11T04:12:50.663Z",
+  "case": "low",
+  "url": "https://api.xiaomimimo.com/v1/responses",
+  "model": "mimo-v2.6-flash",
+  "hasReasoning": true,
+  "effort": "low",
+  "hasThinking": false,
+  "maxOutputTokens": 256,
+  "status": 200,
+  "answer": "2",
+  "finish": "stop",
+  "usage": {
+    "inputTokens": 17,
+    "outputTokens": 5,
+    "totalTokens": 22,
+    "reasoningTokens": 2
+  }
+}

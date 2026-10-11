@@ -1,0 +1,102 @@
+{
+  "provider": "deepseek-lab",
+  "model": "deepseek-flash",
+  "reasoningControlsByFormat": {
+    "chat": {
+      "version": 1,
+      "parameter": "reasoning_effort",
+      "valueType": "string",
+      "offParameter": "thinking.type",
+      "stops": [
+        {
+          "id": "mimo:off",
+          "kind": "off",
+          "value": "disabled",
+          "name": "关闭思考"
+        },
+        {
+          "id": "mimo:default",
+          "kind": "omit",
+          "value": "0",
+          "name": "默认"
+        },
+        {
+          "id": "mimo:level:15171438-913f-4f1d-bbef-aef11d4d851c",
+          "kind": "level",
+          "value": "high",
+          "name": "High"
+        },
+        {
+          "id": "mimo:level:5eaf1cbc-6a9b-4e92-b550-c0d6e0a3311a",
+          "kind": "level",
+          "value": "max",
+          "name": "Max"
+        }
+      ]
+    },
+    "anthropic": {
+      "version": 1,
+      "parameter": "output_config.effort",
+      "valueType": "string",
+      "offParameter": "thinking.type",
+      "stops": [
+        {
+          "id": "mimo:off",
+          "kind": "off",
+          "value": "disabled",
+          "name": "关闭思考"
+        },
+        {
+          "id": "mimo:default",
+          "kind": "omit",
+          "value": "0",
+          "name": "默认"
+        },
+        {
+          "id": "mimo:level:e9a42581-6d3b-4fcd-b458-049f7b5f2fe8",
+          "kind": "level",
+          "value": "high",
+          "name": "High"
+        },
+        {
+          "id": "mimo:level:8e2160d2-e72f-4cda-bde7-6fa132a0fa0d",
+          "kind": "level",
+          "value": "max",
+          "name": "Max"
+        }
+      ]
+    },
+    "responses": {
+      "version": 1,
+      "parameter": "reasoning.effort",
+      "valueType": "string",
+      "offParameter": "reasoning.effort",
+      "stops": [
+        {
+          "id": "mimo:off",
+          "kind": "off",
+          "value": "none",
+          "name": "关闭思考"
+        },
+        {
+          "id": "mimo:default",
+          "kind": "omit",
+          "value": "0",
+          "name": "默认"
+        },
+        {
+          "id": "mimo:level:e0ce7710-d9e4-459a-9cca-b349a7a771de",
+          "kind": "level",
+          "value": "high",
+          "name": "High"
+        },
+        {
+          "id": "mimo:level:f3f83df4-c75b-4970-9674-abca86565906",
+          "kind": "level",
+          "value": "max",
+          "name": "Max"
+        }
+      ]
+    }
+  }
+}

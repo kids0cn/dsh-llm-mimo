@@ -1,0 +1,5 @@
+{"at":"2026-10-10T12:21:27.626Z","model":"mimo-v2.6-flash","thinking":null,"reasoning_effort":null,"status":200}
+{"at":"2026-10-10T12:21:27.617Z","model":"mimo-v2.6-flash","thinking":null,"reasoning_effort":null,"status":200}
+{"at":"2026-10-10T12:22:11.119Z","model":"mimo-v2.6-flash","thinking":{"type":"disabled"},"reasoning_effort":null,"status":200}
+{"at":"2026-10-10T12:23:27.423Z","model":"mimo-v2.6-flash","thinking":{"type":"enabled"},"reasoning_effort":null,"status":200}
+{"at":"2026-10-10T12:41:35.525Z","model":"mimo-v2.6-flash","hasThinking":false,"hasReasoningEffort":false,"thinking":null,"reasoning_effort":null,"status":200}

@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-10T20:28:11.321Z",
+  "temporaryConfig": true,
+  "records": [
+    {
+      "case": "off",
+      "url": "https://api.deepseek.com/v1/responses",
+      "model": "deepseek-flash",
+      "hasReasoning": true,
+      "effort": "none",
+      "hasThinking": false,
+      "status": 200,
+      "answer": "2",
+      "finish": "stop",
+      "usage": {
+        "inputTokens": 14,
+        "outputTokens": 1,
+        "totalTokens": 15,
+        "reasoningTokens": 0
+      }
+    },
+    {
+      "case": "default",
+      "url": "https://api.deepseek.com/v1/responses",
+      "model": "deepseek-flash",
+      "hasReasoning": false,
+      "hasThinking": false,
+      "status": 200,
+      "answer": "2",
+      "finish": "stop",
+      "usage": {
+        "inputTokens": 40,
+        "outputTokens": 23,
+        "totalTokens": 63,
+        "reasoningTokens": 21
+      }
+    },
+    {
+      "case": "high",
+      "url": "https://api.deepseek.com/v1/responses",
+      "model": "deepseek-flash",
+      "hasReasoning": true,
+      "effort": "high",
+      "hasThinking": false,
+      "status": 200,
+      "answer": "2",
+      "finish": "stop",
+      "usage": {
+        "inputTokens": 40,
+        "outputTokens": 22,
+        "totalTokens": 62,
+        "reasoningTokens": 20
+      }
+    },
+    {
+      "case": "max",
+      "url": "https://api.deepseek.com/v1/responses",
+      "model": "deepseek-flash",
+      "hasReasoning": true,
+      "effort": "max",
+      "hasThinking": false,
+      "status": 200,
+      "answer": "2",
+      "finish": "stop",
+      "usage": {
+        "inputTokens": 40,
+        "outputTokens": 43,
+        "totalTokens": 83,
+        "reasoningTokens": 41
+      }
+    }
+  ]
+}

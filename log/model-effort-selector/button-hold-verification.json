@@ -1,0 +1,968 @@
+{
+  "date": "2026-10-11",
+  "baseline": "0.2.0-rc.2",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "holdThresholdMs": 200,
+  "glyphTransitionMs": 140,
+  "hoverBackgroundColorTransitionMs": 0,
+  "evidence": [
+    {
+      "test": "quick click with timer elapsed",
+      "state": {
+        "button": "添加思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 742.9473876953125,
+          "right": 980.9473876953124,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 742.9473876953125,
+          "y": 238.73684692382812
+        },
+        "deleting": false,
+        "ghost": null,
+        "glyphs": [],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 397.7368469238281,
+              "height": 22,
+              "left": 850.9473876953125,
+              "right": 872.9473876953125,
+              "top": 375.7368469238281,
+              "width": 22,
+              "x": 850.9473876953125,
+              "y": 375.7368469238281
+            },
+            "surface": "llm-mimo-drawerbody"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high"
+        ]
+      }
+    },
+    {
+      "test": "110ms before hold threshold",
+      "state": {
+        "button": "添加思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 742.9473876953125,
+          "right": 980.9473876953124,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 742.9473876953125,
+          "y": 238.73684692382812
+        },
+        "deleting": false,
+        "ghost": null,
+        "glyphs": [],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 397.7368469238281,
+              "height": 22,
+              "left": 850.9473876953125,
+              "right": 872.9473876953125,
+              "top": 375.7368469238281,
+              "width": 22,
+              "x": 850.9473876953125,
+              "y": 375.7368469238281
+            },
+            "surface": "llm-mimo-drawerbody"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high"
+        ]
+      }
+    },
+    {
+      "test": "stationary hold after 200ms",
+      "state": {
+        "button": "删除思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 742.9473876953125,
+          "right": 980.9473876953124,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 742.9473876953125,
+          "y": 238.73684692382812
+        },
+        "deleting": true,
+        "ghost": {
+          "bottom": 401.7368469238281,
+          "height": 30,
+          "left": 846.9473876953125,
+          "right": 876.9473876953125,
+          "top": 371.7368469238281,
+          "width": 30,
+          "x": 846.9473876953125,
+          "y": 371.7368469238281
+        },
+        "glyphs": [
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-out",
+            "duration": "0.14s"
+          },
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-in",
+            "duration": "0.14s"
+          }
+        ],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 397.7368469238281,
+              "height": 22,
+              "left": 850.9473876953125,
+              "right": 872.9473876953125,
+              "top": 375.7368469238281,
+              "width": 22,
+              "x": 850.9473876953125,
+              "y": 375.7368469238281
+            },
+            "surface": "mm-drag-surface"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high"
+        ]
+      },
+      "cardBefore": {
+        "bottom": 366.3947448730469,
+        "height": 127.65789794921876,
+        "left": 742.9473876953125,
+        "right": 980.9473876953124,
+        "top": 238.73684692382812,
+        "width": 238,
+        "x": 742.9473876953125,
+        "y": 238.73684692382812
+      }
+    },
+    {
+      "test": "stationary release",
+      "state": {
+        "button": "添加思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 742.9473876953125,
+          "right": 980.9473876953124,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 742.9473876953125,
+          "y": 238.73684692382812
+        },
+        "deleting": false,
+        "ghost": null,
+        "glyphs": [
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-out",
+            "duration": "0.14s"
+          },
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-in",
+            "duration": "0.14s"
+          }
+        ],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 397.7368469238281,
+              "height": 22,
+              "left": 850.9473876953125,
+              "right": 872.9473876953125,
+              "top": 375.7368469238281,
+              "width": 22,
+              "x": 850.9473876953125,
+              "y": 375.7368469238281
+            },
+            "surface": "llm-mimo-drawerbody"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high"
+        ]
+      }
+    },
+    {
+      "test": "movement activates immediately; point/card follow both axes",
+      "before": {
+        "button": "添加思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 623.23681640625,
+          "right": 861.23681640625,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 623.23681640625,
+          "y": 238.73684692382812
+        },
+        "deleting": false,
+        "ghost": null,
+        "glyphs": [],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 397.7368469238281,
+              "height": 22,
+              "left": 731.2368774414062,
+              "right": 753.2368774414062,
+              "top": 375.7368469238281,
+              "width": 22,
+              "x": 731.2368774414062,
+              "y": 375.7368469238281
+            },
+            "surface": "llm-mimo-drawerbody"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high",
+          "max"
+        ]
+      },
+      "after": {
+        "button": "删除思考档位",
+        "card": {
+          "bottom": 391.3947448730469,
+          "height": 127.65789794921876,
+          "left": 743.2236938476562,
+          "right": 981.2236938476562,
+          "top": 263.7368469238281,
+          "width": 238,
+          "x": 743.2236938476562,
+          "y": 263.7368469238281
+        },
+        "deleting": true,
+        "ghost": {
+          "bottom": 426.7368469238281,
+          "height": 30,
+          "left": 847.2368774414062,
+          "right": 877.2368774414062,
+          "top": 396.7368469238281,
+          "width": 30,
+          "x": 847.2368774414062,
+          "y": 396.7368469238281
+        },
+        "glyphs": [
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-out",
+            "duration": "0.14s"
+          },
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-in",
+            "duration": "0.14s"
+          }
+        ],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 422.7368469238281,
+              "height": 22,
+              "left": 851.2368774414062,
+              "right": 873.2368774414062,
+              "top": 400.7368469238281,
+              "width": 22,
+              "x": 851.2368774414062,
+              "y": 400.7368469238281
+            },
+            "surface": "mm-drag-surface"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "max",
+          "high"
+        ]
+      }
+    },
+    {
+      "test": "reorder commit",
+      "state": {
+        "button": "添加思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 742.9473876953125,
+          "right": 980.9473876953124,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 742.9473876953125,
+          "y": 238.73684692382812
+        },
+        "deleting": false,
+        "ghost": null,
+        "glyphs": [
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-out",
+            "duration": "0.14s"
+          },
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-in",
+            "duration": "0.14s"
+          }
+        ],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 397.7368469238281,
+              "height": 22,
+              "left": 850.9473876953125,
+              "right": 872.9473876953125,
+              "top": 375.7368469238281,
+              "width": 22,
+              "x": 850.9473876953125,
+              "y": 375.7368469238281
+            },
+            "surface": "llm-mimo-drawerbody"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "max",
+          "high"
+        ]
+      }
+    },
+    {
+      "test": "stationary card grip long press",
+      "state": {
+        "button": "删除思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 742.9473876953125,
+          "right": 980.9473876953124,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 742.9473876953125,
+          "y": 238.73684692382812
+        },
+        "deleting": true,
+        "ghost": {
+          "bottom": 401.7368469238281,
+          "height": 30,
+          "left": 846.9473876953125,
+          "right": 876.9473876953125,
+          "top": 371.7368469238281,
+          "width": 30,
+          "x": 846.9473876953125,
+          "y": 371.7368469238281
+        },
+        "glyphs": [
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-out",
+            "duration": "0.14s"
+          },
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-in",
+            "duration": "0.14s"
+          }
+        ],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 397.7368469238281,
+              "height": 22,
+              "left": 850.9473876953125,
+              "right": 872.9473876953125,
+              "top": 375.7368469238281,
+              "width": 22,
+              "x": 850.9473876953125,
+              "y": 375.7368469238281
+            },
+            "surface": "mm-drag-surface"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "max",
+          "high"
+        ]
+      }
+    },
+    {
+      "test": "held card grip movement follows",
+      "before": {
+        "button": "添加思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 742.9473876953125,
+          "right": 980.9473876953124,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 742.9473876953125,
+          "y": 238.73684692382812
+        },
+        "deleting": false,
+        "ghost": null,
+        "glyphs": [],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 259.7368469238281,
+              "height": 9,
+              "left": 754.9473876953125,
+              "right": 968.9473876953124,
+              "top": 250.73684692382812,
+              "width": 214,
+              "x": 754.9473876953125,
+              "y": 250.73684692382812
+            },
+            "surface": "mm-effort-card"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "max",
+          "high"
+        ]
+      },
+      "after": {
+        "button": "删除思考档位",
+        "card": {
+          "bottom": 384.3947448730469,
+          "height": 127.65789794921876,
+          "left": 622.9473876953125,
+          "right": 860.9473876953125,
+          "top": 256.7368469238281,
+          "width": 238,
+          "x": 622.9473876953125,
+          "y": 256.7368469238281
+        },
+        "deleting": true,
+        "ghost": {
+          "bottom": 419.7368469238281,
+          "height": 30,
+          "left": 726.9473876953125,
+          "right": 756.9473876953125,
+          "top": 389.7368469238281,
+          "width": 30,
+          "x": 726.9473876953125,
+          "y": 389.7368469238281
+        },
+        "glyphs": [
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-out",
+            "duration": "0.14s"
+          },
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-in",
+            "duration": "0.14s"
+          }
+        ],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 415.7368469238281,
+              "height": 22,
+              "left": 730.9473876953125,
+              "right": 752.9473876953125,
+              "top": 393.7368469238281,
+              "width": 22,
+              "x": 730.9473876953125,
+              "y": 393.7368469238281
+            },
+            "surface": "mm-drag-surface"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high",
+          "max"
+        ]
+      }
+    },
+    {
+      "test": "card reorder commit",
+      "state": {
+        "button": "添加思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 623.23681640625,
+          "right": 861.23681640625,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 623.23681640625,
+          "y": 238.73684692382812
+        },
+        "deleting": false,
+        "ghost": null,
+        "glyphs": [
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-out",
+            "duration": "0.14s"
+          },
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-in",
+            "duration": "0.14s"
+          }
+        ],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 292.32895278930664,
+              "height": 29.592105865478516,
+              "left": 635.23681640625,
+              "right": 849.23681640625,
+              "top": 262.7368469238281,
+              "width": 214,
+              "x": 635.23681640625,
+              "y": 262.7368469238281
+            },
+            "surface": "mm-effort-card"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high",
+          "max"
+        ]
+      }
+    },
+    {
+      "test": "special point 关闭思考 long hold",
+      "state": {
+        "button": "添加思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 115.65789794921876,
+          "left": 383.8421020507813,
+          "right": 621.8421020507812,
+          "top": 250.73684692382812,
+          "width": 238,
+          "x": 383.8421020507813,
+          "y": 250.73684692382812
+        },
+        "deleting": false,
+        "ghost": null,
+        "glyphs": [],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 397.7368469238281,
+              "height": 22,
+              "left": 491.8421020507813,
+              "right": 513.8421020507812,
+              "top": 375.7368469238281,
+              "width": 22,
+              "x": 491.8421020507813,
+              "y": 375.7368469238281
+            },
+            "surface": "llm-mimo-drawerbody"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high",
+          "max"
+        ]
+      }
+    },
+    {
+      "test": "special point 默认 long hold",
+      "state": {
+        "button": "添加思考档位",
+        "card": {
+          "bottom": 367.19737243652344,
+          "height": 111.46052551269533,
+          "left": 503.53948974609375,
+          "right": 741.5394897460938,
+          "top": 255.73684692382812,
+          "width": 238,
+          "x": 503.53948974609375,
+          "y": 255.73684692382812
+        },
+        "deleting": false,
+        "ghost": null,
+        "glyphs": [],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 397.7368469238281,
+              "height": 22,
+              "left": 610.618408203125,
+              "right": 632.618408203125,
+              "top": 375.7368469238281,
+              "width": 22,
+              "x": 610.618408203125,
+              "y": 375.7368469238281
+            },
+            "surface": "llm-mimo-drawerbody"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high",
+          "max"
+        ]
+      }
+    },
+    {
+      "test": "Escape before hold threshold clears timer",
+      "state": {
+        "button": "添加思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 623.23681640625,
+          "right": 861.23681640625,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 623.23681640625,
+          "y": 238.73684692382812
+        },
+        "deleting": false,
+        "ghost": null,
+        "glyphs": [],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 397.7368469238281,
+              "height": 22,
+              "left": 731.2368774414062,
+              "right": 753.2368774414062,
+              "top": 375.7368469238281,
+              "width": 22,
+              "x": 731.2368774414062,
+              "y": 375.7368469238281
+            },
+            "surface": "llm-mimo-drawerbody"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high",
+          "max"
+        ]
+      }
+    },
+    {
+      "test": "activated hold Escape cancellation",
+      "before": {
+        "button": "删除思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 742.9473876953125,
+          "right": 980.9473876953124,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 742.9473876953125,
+          "y": 238.73684692382812
+        },
+        "deleting": true,
+        "ghost": {
+          "bottom": 401.7368469238281,
+          "height": 30,
+          "left": 846.9473876953125,
+          "right": 876.9473876953125,
+          "top": 371.7368469238281,
+          "width": 30,
+          "x": 846.9473876953125,
+          "y": 371.7368469238281
+        },
+        "glyphs": [
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-out",
+            "duration": "0.14s"
+          },
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-in",
+            "duration": "0.14s"
+          }
+        ],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 397.7368469238281,
+              "height": 22,
+              "left": 850.9473876953125,
+              "right": 872.9473876953125,
+              "top": 375.7368469238281,
+              "width": 22,
+              "x": 850.9473876953125,
+              "y": 375.7368469238281
+            },
+            "surface": "mm-drag-surface"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high",
+          "max"
+        ]
+      },
+      "after": {
+        "button": "添加思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 742.9473876953125,
+          "right": 980.9473876953124,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 742.9473876953125,
+          "y": 238.73684692382812
+        },
+        "deleting": false,
+        "ghost": null,
+        "glyphs": [
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-out",
+            "duration": "0.14s"
+          },
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-in",
+            "duration": "0.14s"
+          }
+        ],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 397.7368469238281,
+              "height": 22,
+              "left": 850.9473876953125,
+              "right": 872.9473876953125,
+              "top": 375.7368469238281,
+              "width": 22,
+              "x": 850.9473876953125,
+              "y": 375.7368469238281
+            },
+            "surface": "llm-mimo-drawerbody"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high",
+          "max"
+        ]
+      }
+    },
+    {
+      "test": "drop target own highlight without travel frame",
+      "state": {
+        "button": "删除思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 779.9473876953125,
+          "right": 1017.9473876953124,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 779.9473876953125,
+          "y": 238.73684692382812
+        },
+        "deleting": true,
+        "ghost": {
+          "bottom": 401.7368469238281,
+          "height": 30,
+          "left": 883.9473876953125,
+          "right": 913.9473876953124,
+          "top": 371.7368469238281,
+          "width": 30,
+          "x": 883.9473876953125,
+          "y": 371.7368469238281
+        },
+        "glyphs": [],
+        "hoverTargets": [],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high",
+          "max"
+        ]
+      },
+      "style": {
+        "background": "rgb(239, 71, 52)",
+        "color": "rgb(255, 255, 255)",
+        "over": true,
+        "transition": "transform 0.1s"
+      },
+      "reference": {
+        "background": "rgb(239, 71, 52)",
+        "color": "rgb(255, 255, 255)",
+        "transitionDuration": "0s"
+      }
+    },
+    {
+      "test": "drop to delete max",
+      "state": {
+        "button": "添加思考档位",
+        "card": null,
+        "deleting": false,
+        "ghost": null,
+        "glyphs": [
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-out",
+            "duration": "0.14s"
+          },
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-in",
+            "duration": "0.14s"
+          }
+        ],
+        "hoverTargets": [],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high"
+        ]
+      }
+    },
+    {
+      "test": "travel frame resumes after leaving exempt bin",
+      "atBin": {
+        "button": "删除思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 779.9473876953125,
+          "right": 1017.9473876953124,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 779.9473876953125,
+          "y": 238.73684692382812
+        },
+        "deleting": true,
+        "ghost": {
+          "bottom": 401.7368469238281,
+          "height": 30,
+          "left": 883.9473876953125,
+          "right": 913.9473876953124,
+          "top": 371.7368469238281,
+          "width": 30,
+          "x": 883.9473876953125,
+          "y": 371.7368469238281
+        },
+        "glyphs": [
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-out",
+            "duration": "0.14s"
+          },
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-in",
+            "duration": "0.14s"
+          }
+        ],
+        "hoverTargets": [],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high"
+        ]
+      },
+      "returned": {
+        "button": "删除思考档位",
+        "card": {
+          "bottom": 366.3947448730469,
+          "height": 127.65789794921876,
+          "left": 742.9473876953125,
+          "right": 980.9473876953124,
+          "top": 238.73684692382812,
+          "width": 238,
+          "x": 742.9473876953125,
+          "y": 238.73684692382812
+        },
+        "deleting": true,
+        "ghost": {
+          "bottom": 401.7368469238281,
+          "height": 30,
+          "left": 846.9473876953125,
+          "right": 876.9473876953125,
+          "top": 371.7368469238281,
+          "width": 30,
+          "x": 846.9473876953125,
+          "y": 371.7368469238281
+        },
+        "glyphs": [
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-out",
+            "duration": "0.14s"
+          },
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-in",
+            "duration": "0.14s"
+          }
+        ],
+        "hoverTargets": [
+          {
+            "rect": {
+              "bottom": 397.7368469238281,
+              "height": 22,
+              "left": 850.9473876953125,
+              "right": 872.9473876953125,
+              "top": 375.7368469238281,
+              "width": 22,
+              "x": 850.9473876953125,
+              "y": 375.7368469238281
+            },
+            "surface": "mm-drag-surface"
+          }
+        ],
+        "points": [
+          "关闭思考",
+          "默认",
+          "high"
+        ]
+      }
+    },
+    {
+      "test": "temporary levels removed; original two points restored",
+      "state": {
+        "button": "添加思考档位",
+        "card": null,
+        "deleting": false,
+        "ghost": null,
+        "glyphs": [
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-out",
+            "duration": "0.14s"
+          },
+          {
+            "class": "llm-mimo-trash-glyph mm-glyph-in",
+            "duration": "0.14s"
+          }
+        ],
+        "hoverTargets": [],
+        "points": [
+          "关闭思考",
+          "默认"
+        ]
+      }
+    }
+  ]
+}

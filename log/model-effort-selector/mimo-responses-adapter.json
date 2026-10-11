@@ -1,0 +1,230 @@
+{
+  "endpoint": "https://api.xiaomimimo.com/v1/responses",
+  "date": "2026-10-10T20:22:57.982Z",
+  "cases": [
+    {
+      "case": "default",
+      "model": "mimo-v2.6-flash",
+      "hasReasoning": false,
+      "hasThinking": false,
+      "inputTypes": [
+        "user"
+      ],
+      "toolNames": [],
+      "status": 200,
+      "finish": "stop",
+      "usage": {
+        "inputTokens": 17,
+        "outputTokens": 5,
+        "totalTokens": 22,
+        "reasoningTokens": 2
+      },
+      "answer": "2"
+    },
+    {
+      "case": "off",
+      "model": "mimo-v2.6-flash",
+      "hasReasoning": true,
+      "effort": "none",
+      "hasThinking": false,
+      "inputTypes": [
+        "user"
+      ],
+      "toolNames": [],
+      "status": 200,
+      "finish": "stop",
+      "usage": {
+        "inputTokens": 19,
+        "outputTokens": 2,
+        "totalTokens": 21,
+        "reasoningTokens": 0
+      },
+      "answer": "2"
+    },
+    {
+      "case": "high",
+      "model": "mimo-v2.6-flash",
+      "hasReasoning": true,
+      "effort": "high",
+      "hasThinking": false,
+      "inputTypes": [
+        "user"
+      ],
+      "toolNames": [],
+      "status": 200,
+      "finish": "stop",
+      "usage": {
+        "inputTokens": 17,
+        "outputTokens": 5,
+        "totalTokens": 22,
+        "reasoningTokens": 2
+      },
+      "answer": "2"
+    },
+    {
+      "case": "max",
+      "model": "mimo-v2.6-flash",
+      "hasReasoning": true,
+      "effort": "max",
+      "hasThinking": false,
+      "inputTypes": [
+        "user"
+      ],
+      "toolNames": [],
+      "status": 200,
+      "finish": "stop",
+      "usage": {
+        "inputTokens": 17,
+        "outputTokens": 5,
+        "totalTokens": 22,
+        "reasoningTokens": 2
+      },
+      "answer": "2"
+    }
+  ],
+  "toolRounds": [
+    {
+      "model": "mimo-v2.6-flash",
+      "hasReasoning": true,
+      "effort": "high",
+      "hasThinking": false,
+      "inputTypes": [
+        "user"
+      ],
+      "toolNames": [
+        "read_file",
+        "write_file"
+      ],
+      "status": 200,
+      "round": 0,
+      "finish": "tool-calls",
+      "blocks": [
+        "reasoning",
+        "tool-call"
+      ],
+      "usage": {
+        "inputTokens": 22,
+        "outputTokens": 43,
+        "totalTokens": 257,
+        "cacheReadTokens": 192,
+        "reasoningTokens": 24
+      }
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "hasReasoning": true,
+      "effort": "high",
+      "hasThinking": false,
+      "inputTypes": [
+        "user",
+        "reasoning",
+        "function_call",
+        "function_call_output"
+      ],
+      "toolNames": [
+        "read_file",
+        "write_file"
+      ],
+      "status": 200,
+      "round": 1,
+      "finish": "tool-calls",
+      "blocks": [
+        "reasoning",
+        "tool-call"
+      ],
+      "usage": {
+        "inputTokens": 85,
+        "outputTokens": 43,
+        "totalTokens": 320,
+        "cacheReadTokens": 192,
+        "reasoningTokens": 24
+      }
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "hasReasoning": true,
+      "effort": "high",
+      "hasThinking": false,
+      "inputTypes": [
+        "user",
+        "reasoning",
+        "function_call",
+        "function_call_output",
+        "reasoning",
+        "function_call",
+        "function_call_output"
+      ],
+      "toolNames": [
+        "read_file",
+        "write_file"
+      ],
+      "status": 200,
+      "round": 2,
+      "finish": "tool-calls",
+      "blocks": [
+        "reasoning",
+        "tool-call"
+      ],
+      "usage": {
+        "inputTokens": 84,
+        "outputTokens": 89,
+        "totalTokens": 429,
+        "cacheReadTokens": 256,
+        "reasoningTokens": 50
+      }
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "hasReasoning": true,
+      "effort": "high",
+      "hasThinking": false,
+      "inputTypes": [
+        "user",
+        "reasoning",
+        "function_call",
+        "function_call_output",
+        "reasoning",
+        "function_call",
+        "function_call_output",
+        "reasoning",
+        "function_call",
+        "function_call_output"
+      ],
+      "toolNames": [
+        "read_file",
+        "write_file"
+      ],
+      "status": 200,
+      "round": 3,
+      "finish": "stop",
+      "blocks": [
+        "reasoning",
+        "text"
+      ],
+      "usage": {
+        "inputTokens": 117,
+        "outputTokens": 23,
+        "totalTokens": 460,
+        "cacheReadTokens": 320,
+        "reasoningTokens": 20
+      }
+    }
+  ],
+  "toolResult": {
+    "read": true,
+    "written": true,
+    "markerMatches": true,
+    "toolsUsed": [
+      "read_file",
+      "read_file",
+      "write_file"
+    ],
+    "finalAnswer": "OK"
+  },
+  "additionalProbe": {
+    "model": "mimo-v2.6-pro",
+    "case": "default",
+    "result": "timeout",
+    "timeoutMs": 45000
+  }
+}

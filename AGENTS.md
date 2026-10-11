@@ -8,7 +8,10 @@
 
 ### `listHostedModels(): Array<{ provider, id, name, ... }>`
 枚举本插件托管面（`mimo` 主路由 + 全部 `customProviders` 条目的模型目录）。
-**消费方 GUI 的模型下拉必须只用这个源**——非托管模型不给配置入口，即治理性退化。
+**提示词源及托管配置消费方 GUI 的模型下拉必须只用这个源**——非托管模型不给托管配置入口，即治理性退化。
+条目额外提供 `isDefault`、`apiFormat`、标准 `reasoning` 与当前格式归一化的 `reasoningControls`。托管判断必须
+精确匹配 `(provider, id)`；浏览器的 `modelControlsViewJson` 由同一接口派生，只有模型
+元数据，不包含凭据或连接地址。
 
 ### `registerPromptSource(source): () => void`
 注册提示词源，返回 disposer。`source` 形状：
@@ -54,14 +57,55 @@ llmMimo dispatch 接口是**兜底/强制层**（防绕过路径、装配层失�
 | 字段 | 说明 |
 |---|---|
 | `apiKeyEnv` | 凭据引用名（credential-ref；缺省 `MIMO_NORMAL_API_KEY`） |
-| `baseURL` / `apiFormat` | 主路由连接；`apiFormat`: `anthropic` \| `chat` \| `responses`（后者存根） |
-| `modelsJson` | 模型目录 JSON 字符串，条目：`id/name/contextWindow/maxTokens/inputModalities/videoFps/videoMediaResolution` |
-| `customProviders` | dict（volatile）：`displayName/apiKeyEnv/baseURL/apiFormat/baseURLsJson/modelsJson`，route 即路由键 |
+| `baseURL` / `apiFormat` | 主路由连接；`apiFormat`: `anthropic` \| `chat` \| `responses`，三者均有传输 |
+| `modelsJson` | 模型目录 JSON 字符串，条目：`id/name/description/contextWindow/maxTokens/inputModalities/videoFps/videoMediaResolution/reasoningControlsByFormat`；兼容旧单份 `reasoningControls` |
+| `defaultModelId` | 供应商默认模型 ID（volatile）；缺省或失效取目录第一项 |
+| `customProviders` | dict（volatile）：`displayName/apiKeyEnv/baseURL/apiFormat/baseURLsJson/modelsJson/defaultModelId`，route 即路由键 |
+| `modelControlsViewJson` | volatile 派生托管目录（勿手写），设置及适配器更新后客户端重新读取 |
 | `dispatchViewJson` | volatile 遥测（勿手写）：每次 dispatch 的实际 system 视图记录环形缓冲（`[{time, provider, model, tampered, system}]`，新者在前，cap 8，按 model+tampered+system 去重）。无注册源也记录（tampered=false）。轨迹面板注入（client）读取；实例重启即清 |
 
 `inputModalities` 词汇：`text | image | audio | video | pdf`。**勾选=能力声明**：
 未勾的模态发送即拒（错误文案指明缺哪个、给两条出路）；anthropic 面勾 audio/video/pdf
 是假声明（MiMo 服务端静默丢，见能力矩阵），勾选前先确认 `apiFormat`。
+
+`reasoningControlsByFormat` 按 `chat/anthropic/responses` 分开保存，每个桶的协议版本为
+1：`parameter`（当前模型、当前格式普通档位共用点分字段路径）、`valueType`
+（`auto/string/number/json`）、`offParameter`（Chat/Anthropic 初始 `thinking.type`，Responses 初始 `reasoning.effort`）及有序 `stops`。
+每项包含稳定 `id`、`kind: off/omit/level`、必填文本 `value`、可选 `name`。特殊 ID 为
+`mimo:off` / `mimo:default`，固定在前两项；普通项使用 `mimo:level:<uuid>`，不得用
+值或顺序充当 ID。普通名称留空跟随值；特殊名称缺省保留语义名称。
+
+**默认必须省略全部思考参数，包括开关**：标准目录 `defaultEffort` 为 `mimo:default`，
+未传 effort 和该 ID 都构造空映射；旧 `thinking` 配置只保留加载兼容，不再注入请求，
+标题也不强制关闭。关闭初始值 `disabled` 可修改，自定义目录的普通档位与字段需要手动
+配置，不自动猜测端点能力或填预算。用户授权的默认 MiMo V2.6 Flash/Pro/Pro Ultraspeed
+目录例外：Chat 与 Messages 预设关闭/默认/开启，为 `thinking.type: disabled/enabled`；
+Responses 预设 none/不传参/low/high，字段为 `reasoning.effort`，默认仍选不传参。
+当前 MiMo 非 none 档位行为相同，
+不虚构 token 预算。预设仅写入插件自带默认目录，已有目录/格式桶及手动删除不自动回填。
+普通预设项使用预先生成的稳定 UUID，三模型/三格式分别独立。禁止参数路径覆盖模型、
+消息、工具、输出上限等契约字段及原型
+属性。过期 ID 拒绝发送并显示错误；能力与映射都读取 `prepareCall` 捕获的连接快照。
+
+旧单份字段在编辑/切换前归入原格式，未配置格式不能借用其他格式的字段与档位。
+Responses 关闭初始为 reasoning.effort: none，实际请求为 Base URL 下 /responses；
+MiMo 根地址为 https://api.xiaomimimo.com/v1。默认省略整个 reasoning，选择其他点
+按当前桶映射发送。Responses 输出 item 对应持久 block；原生 reasoning 内容、ID
+及可选 encrypted_content 保存在 replayState，只有同模型/路由且内容未改才复用。
+工具关联使用 call_id，不能用输出 item 的 id 代替；function_call_output 回传每个
+工具结果。流必须以 response.completed/incomplete 结尾，断流不能视为成功。
+保存校验全部已配置的格式；隐藏格式有错误时切到该格式并定位输入框。
+
+会话入口使用公共 `conversation.input.model` single 槽与标准 ModelDirectory；按精确
+托管成员读取本插件映射，原生 llm-deepseek/pi-ai 模型只展示其标准 reasoning 词汇。
+这是用户授权的会话控件适配，不扩大提示词配置或 llmMimo 托管范围。原生默认点使用
+适配器公布的默认值，原生参数转换留给原适配器，不承诺省略原生请求参数；不广告
+关闭则不补关闭点。UI 内部 native-default ID 不得发送给适配器。无可用目录时委托
+原有槽组件。待选值按会话及精确路由暂存，配置/格式更新后清除，持久选择走共享目录。
+新选模服务采用可选注入，仅在 0.2.0-rc.2 验证新交互，缺失时保留旧功能。
+
+模型控制客户端源在 `src/controls-client.js`，共享纯规则在 `lib/model-controls.js`；运行
+`npm run build:client` 更新 `lib/client.js` 标记区域，勿只改生成区域。CI 校验生成一致性。
 
 ## 四、宿主要求
 

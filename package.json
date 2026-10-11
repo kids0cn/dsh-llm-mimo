@@ -8,6 +8,7 @@
   "type": "module",
   "main": "lib/index.js",
   "scripts": {
+    "build:client": "node scripts/build-controls-client.mjs",
     "verify:install": "node scripts/verify-install.mjs",
     "test": "node scripts/verify-install.mjs",
     "ci": "node scripts/ci.mjs"
@@ -23,6 +24,7 @@
     "cordis.patch.yml",
     "patches",
     "README.md",
+    "docs/images",
     "AGENTS.md",
     "LICENSE"
   ],

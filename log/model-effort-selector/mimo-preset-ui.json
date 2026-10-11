@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-11",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "presets": [
+    {
+      "format": "responses",
+      "id": "mimo:level:cffdadef-cb34-4d9e-b9a4-0c3e080410d0",
+      "name": "开启思考",
+      "parameter": "reasoning.effort",
+      "type": "string",
+      "value": "high"
+    },
+    {
+      "format": "responses",
+      "id": "mimo:level:3172585e-f6ec-4621-b926-f366cc1fb7e7",
+      "name": "开启思考",
+      "parameter": "reasoning.effort",
+      "type": "string",
+      "value": "high"
+    },
+    {
+      "format": "responses",
+      "id": "mimo:level:f62b1c14-24be-461b-8a52-a1595314b858",
+      "name": "开启思考",
+      "parameter": "reasoning.effort",
+      "type": "string",
+      "value": "high"
+    },
+    {
+      "format": "chat",
+      "id": "mimo:level:8704598f-a4b3-4ede-bb31-c8681d13e573",
+      "name": "开启思考",
+      "parameter": "thinking.type",
+      "type": "string",
+      "value": "enabled"
+    },
+    {
+      "format": "chat",
+      "id": "mimo:level:286bbebd-b351-4cbc-b1db-93c2aca5f8f0",
+      "name": "开启思考",
+      "parameter": "thinking.type",
+      "type": "string",
+      "value": "enabled"
+    },
+    {
+      "format": "chat",
+      "id": "mimo:level:abdeac5a-eef5-45c5-b925-2817b2c095ae",
+      "name": "开启思考",
+      "parameter": "thinking.type",
+      "type": "string",
+      "value": "enabled"
+    },
+    {
+      "format": "anthropic",
+      "id": "mimo:level:839ea733-6e77-449f-a332-dbcca69da6b0",
+      "name": "开启思考",
+      "parameter": "thinking.type",
+      "type": "string",
+      "value": "enabled"
+    },
+    {
+      "format": "anthropic",
+      "id": "mimo:level:54f118aa-f781-4b74-b9fa-33797133a96a",
+      "name": "开启思考",
+      "parameter": "thinking.type",
+      "type": "string",
+      "value": "enabled"
+    },
+    {
+      "format": "anthropic",
+      "id": "mimo:level:392eaec5-9d11-4208-b2a7-642abbad85ce",
+      "name": "开启思考",
+      "parameter": "thinking.type",
+      "type": "string",
+      "value": "enabled"
+    }
+  ]
+}

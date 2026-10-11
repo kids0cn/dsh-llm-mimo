@@ -1,0 +1,258 @@
+{
+  "apiFormat": "responses",
+  "effectiveDefaultModelId": "mimo-v2.6-flash",
+  "models": [
+    {
+      "id": "mimo-v2.6-flash",
+      "name": "MiMo V2.6 Flash",
+      "reasoningControlsByFormat": {
+        "chat": {
+          "version": 1,
+          "parameter": "thinking.type",
+          "valueType": "string",
+          "offParameter": "thinking.type",
+          "stops": [
+            {
+              "id": "mimo:off",
+              "kind": "off",
+              "value": "disabled",
+              "name": "关闭思考"
+            },
+            {
+              "id": "mimo:default",
+              "kind": "omit",
+              "value": "0",
+              "name": "默认"
+            },
+            {
+              "id": "mimo:level:8704598f-a4b3-4ede-bb31-c8681d13e573",
+              "kind": "level",
+              "value": "enabled",
+              "name": "开启思考"
+            }
+          ]
+        },
+        "anthropic": {
+          "version": 1,
+          "parameter": "thinking.type",
+          "valueType": "string",
+          "offParameter": "thinking.type",
+          "stops": [
+            {
+              "id": "mimo:off",
+              "kind": "off",
+              "value": "disabled",
+              "name": "关闭思考"
+            },
+            {
+              "id": "mimo:default",
+              "kind": "omit",
+              "value": "0",
+              "name": "默认"
+            },
+            {
+              "id": "mimo:level:839ea733-6e77-449f-a332-dbcca69da6b0",
+              "kind": "level",
+              "value": "enabled",
+              "name": "开启思考"
+            }
+          ]
+        },
+        "responses": {
+          "version": 1,
+          "parameter": "reasoning.effort",
+          "valueType": "string",
+          "offParameter": "reasoning.effort",
+          "stops": [
+            {
+              "id": "mimo:off",
+              "kind": "off",
+              "value": "none",
+              "name": "关闭思考"
+            },
+            {
+              "id": "mimo:default",
+              "kind": "omit",
+              "value": "0",
+              "name": "默认"
+            },
+            {
+              "id": "mimo:level:cffdadef-cb34-4d9e-b9a4-0c3e080410d0",
+              "kind": "level",
+              "value": "high",
+              "name": "开启思考"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-pro",
+      "name": "MiMo V2.6 Pro",
+      "reasoningControlsByFormat": {
+        "responses": {
+          "version": 1,
+          "parameter": "reasoning.effort",
+          "valueType": "string",
+          "offParameter": "reasoning.effort",
+          "stops": [
+            {
+              "id": "mimo:off",
+              "kind": "off",
+              "value": "none",
+              "name": "关闭思考"
+            },
+            {
+              "id": "mimo:default",
+              "kind": "omit",
+              "value": "0",
+              "name": "默认"
+            },
+            {
+              "id": "mimo:level:3172585e-f6ec-4621-b926-f366cc1fb7e7",
+              "kind": "level",
+              "value": "high",
+              "name": "开启思考"
+            }
+          ]
+        },
+        "chat": {
+          "version": 1,
+          "parameter": "thinking.type",
+          "valueType": "string",
+          "offParameter": "thinking.type",
+          "stops": [
+            {
+              "id": "mimo:off",
+              "kind": "off",
+              "value": "disabled",
+              "name": "关闭思考"
+            },
+            {
+              "id": "mimo:default",
+              "kind": "omit",
+              "value": "0",
+              "name": "默认"
+            },
+            {
+              "id": "mimo:level:286bbebd-b351-4cbc-b1db-93c2aca5f8f0",
+              "kind": "level",
+              "value": "enabled",
+              "name": "开启思考"
+            }
+          ]
+        },
+        "anthropic": {
+          "version": 1,
+          "parameter": "thinking.type",
+          "valueType": "string",
+          "offParameter": "thinking.type",
+          "stops": [
+            {
+              "id": "mimo:off",
+              "kind": "off",
+              "value": "disabled",
+              "name": "关闭思考"
+            },
+            {
+              "id": "mimo:default",
+              "kind": "omit",
+              "value": "0",
+              "name": "默认"
+            },
+            {
+              "id": "mimo:level:54f118aa-f781-4b74-b9fa-33797133a96a",
+              "kind": "level",
+              "value": "enabled",
+              "name": "开启思考"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mimo-v2.6-pro-ultraspeed",
+      "name": "MiMo V2.6 Pro Ultraspeed",
+      "reasoningControlsByFormat": {
+        "responses": {
+          "version": 1,
+          "parameter": "reasoning.effort",
+          "valueType": "string",
+          "offParameter": "reasoning.effort",
+          "stops": [
+            {
+              "id": "mimo:off",
+              "kind": "off",
+              "value": "none",
+              "name": "关闭思考"
+            },
+            {
+              "id": "mimo:default",
+              "kind": "omit",
+              "value": "0",
+              "name": "默认"
+            },
+            {
+              "id": "mimo:level:f62b1c14-24be-461b-8a52-a1595314b858",
+              "kind": "level",
+              "value": "high",
+              "name": "开启思考"
+            }
+          ]
+        },
+        "chat": {
+          "version": 1,
+          "parameter": "thinking.type",
+          "valueType": "string",
+          "offParameter": "thinking.type",
+          "stops": [
+            {
+              "id": "mimo:off",
+              "kind": "off",
+              "value": "disabled",
+              "name": "关闭思考"
+            },
+            {
+              "id": "mimo:default",
+              "kind": "omit",
+              "value": "0",
+              "name": "默认"
+            },
+            {
+              "id": "mimo:level:abdeac5a-eef5-45c5-b925-2817b2c095ae",
+              "kind": "level",
+              "value": "enabled",
+              "name": "开启思考"
+            }
+          ]
+        },
+        "anthropic": {
+          "version": 1,
+          "parameter": "thinking.type",
+          "valueType": "string",
+          "offParameter": "thinking.type",
+          "stops": [
+            {
+              "id": "mimo:off",
+              "kind": "off",
+              "value": "disabled",
+              "name": "关闭思考"
+            },
+            {
+              "id": "mimo:default",
+              "kind": "omit",
+              "value": "0",
+              "name": "默认"
+            },
+            {
+              "id": "mimo:level:392eaec5-9d11-4208-b2a7-642abbad85ce",
+              "kind": "level",
+              "value": "enabled",
+              "name": "开启思考"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

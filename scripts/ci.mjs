@@ -3,7 +3,8 @@
  *
  * 链路 = CI workflow 的全部实质步骤：
  *   1. 依赖就位检查（node_modules 缺失则 npm ci）；
- *   2. node scripts/verify-install.mjs（静态 + 模块级 + apply 冒烟 + 工件自洽）；
+ *   2. 静态 + 模块级 + apply 冒烟 + 工件自洽、真实序列化/思考历史回归、
+ *      客户端生成一致性与基线原生 DeepSeek/pi-ai 强度元数据兼容；
  *   3. 补丁 replay 门：npm pack 钉版本（取 peerDeps 列表最新一档）的 dsh-llm 与
  *      dsh-client-ui-settings-models → 解成 node_modules 形状 → apply_host_patches.py
  *      重放，断言 exit 0 + 幂等二跑 skip + 补丁标记在位 + 补丁后文件语法有效
@@ -57,6 +58,11 @@ if (!existsSync(join(root, "node_modules", "@deepseek-ai", "dsh-llm"))) {
 // --- 2. 静态 + 模块级 ---
 console.log("▶ verify-install");
 run("node", [join(root, "scripts", "verify-install.mjs")]);
+run("node", ["--test", join(root, "scripts", "test-chat-reasoning.mjs"), join(root, "scripts", "test-model-controls.mjs"), join(root, "scripts", "test-responses.mjs")]);
+
+run("node", [join(root, "scripts", "build-controls-client.mjs"), "--check"]);
+
+run("node", ["--test", join(root, "scripts", "test-native-efforts.mjs")], { env: { ...process.env, DSH_RUNTIME_BIN: which.stdout.trim() } });
 
 // --- 3. 宿主补丁 replay 门（对 npm pristine 包，哈希即版本门）---
 console.log(`▶ 补丁 replay（宿主包 @ ${latestRuntime}）`);

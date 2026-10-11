@@ -53,3 +53,15 @@
 ## §5 开工点
 
 从 `progress.md` 顶部未完成行接手；任务阶梯与验收标准见 log README §5；本机路径、端口、凭据位置见 `local-env.md`。
+
+## 2026-10-10 思考历史回传修复
+
+[独立接力](../reasoning-history-passback/handover.md)：Chat 序列化现保留完整 reasoning_content；完整 CI 通过，真实原生工具回合及 Token Plan 128K 请求通过。全量重测由根工作区 round-7 接力，不覆盖旧实验。
+
+## 2026-10-11 Responses 传输与四档预设
+
+[选择器接力](../model-effort-selector/handover.md)与[验证记录](../model-effort-selector/mimo-responses-verification.md)：
+Responses 已实现实际传输及原生 reasoning / call_id / 工具结果回传，MiMo 主根地址可用。
+三个默认 MiMo 模型的 Responses 为 none / 不传参 / low / high，默认不传任何思考字段；
+Chat / Messages 配置独立，已有手动配置不自动覆盖。CI 23+2 项及全链门禁通过。
+继续使用 DSH 0.2.0-rc.2，插件 0.4.1；无提交、发布或基线升级。

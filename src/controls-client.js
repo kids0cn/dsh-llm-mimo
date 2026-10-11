@@ -71,7 +71,7 @@ function useDefaultDraft(rows, configured, keys) {
 function DefaultName({row,isDefault,onDefault,t,onPatch,index,placeholder}) {
   return mc('div',{className:'mm-name-slot'+(isDefault?' is-default':'')},
     mc('div',{className:'mm-star-zone'},mc('button',{type:'button',className:'mm-star','data-travel-spot':true,'aria-label':`${row.name||row.id}：${isDefault?'供应商默认模型':'设为供应商默认模型'}`,'aria-pressed':isDefault,onClick:e=>{e.stopPropagation();onDefault();}},isDefault?'★':'☆')),
-    mc('input',{className:'llm-mimo-nameinput',title:t('modelName'),placeholder,value:row.name,onChange:e=>onPatch(index,{name:e.target.value})}));
+    mc('input',{className:'llm-mimo-nameinput','aria-label':t('modelName'),title:t('modelName'),placeholder,value:row.name,onChange:e=>onPatch(index,{name:e.target.value})}));
 }
 function StopActionGlyph({deleting}) {
   const previous=react.useRef(deleting), sequence=react.useRef(0);

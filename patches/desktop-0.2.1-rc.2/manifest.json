@@ -1,0 +1,12 @@
+{
+ "dsh-llm__lib__index.js": {
+  "patched_sha256": "e5f861a4f94e48ad47a6f50abe5264c9cb2d7f2b4f411eb6a3158ce98871d271",
+  "pristine_sha256": "d18d8ae4c8d961e628708c1e4698e09716a0ebb80e55a672e0bde1029bec1155",
+  "pristine_bytes": 105272
+ },
+ "dsh-client-ui-settings-models__lib__client.js": {
+  "patched_sha256": "e2b4e50949538a27cb48f35d0f82d75b8a0a57602776218c49fd78714c55ce26",
+  "pristine_sha256": "190498e15358bcd3fe6810fe6368023a20b0403e3ea493bc979eca9bdb593b28",
+  "pristine_bytes": 211258
+ }
+}

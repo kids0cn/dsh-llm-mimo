@@ -34,7 +34,7 @@ const REMOTE_SOURCES = [
   (p) => `https://cdn.jsdelivr.net/gh/${REPO}@main/patches/${p}`,
 ];
 // 按序尝试的基线制品目录：新版本在前，旧版本兜底
-const BASELINES = ["desktop-0.2.0-rc.2", "desktop-0.2.0-rc.1"];
+const BASELINES = ["desktop-0.2.1-rc.2", "desktop-0.2.0-rc.2", "desktop-0.2.0-rc.1"];
 const TARGETS = [
   { rel: "dsh/node_modules/@deepseek-ai/dsh-llm/lib/index.js", artifact: "dsh-llm__lib__index.js" },
   { rel: "dsh/node_modules/@deepseek-ai/dsh-client-ui-settings-models/lib/client.js", artifact: "dsh-client-ui-settings-models__lib__client.js" },
